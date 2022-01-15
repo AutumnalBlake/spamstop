@@ -95,6 +95,9 @@ async def on_message(message):
 
             await message.channel.send("Vote expired.")
 
+            # Unsilence the user
+            await new_user.remove_roles(silence_role)
+
         else:
             await message.channel.send(f"{new_user.name} joined too long ago. Please alert the moderators if there are any issues.")
 
